@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        function divideNumbers(numerator, denominator) {
+    try {
+        if (denominator === 0) {
+            throw "Division by zero cannot be done try again!";
+        }
+        return numerator / denominator;
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+try {
+    document.write(divideNumbers(5, 2)); 
+    document.write("<br>");
+    document.write(divideNumbers(8, 0));  
+} catch (error) {
+    document.write(error.message);
+}
+    </script>
+</body>
+</html>
